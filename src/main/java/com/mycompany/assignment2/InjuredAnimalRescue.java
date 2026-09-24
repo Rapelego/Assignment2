@@ -1,5 +1,4 @@
 
-package com.mycompany.assignment2;
 
 /**
  *
