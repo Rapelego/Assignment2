@@ -57,14 +57,41 @@ do {
     System.out.print("Enter Animal Name: ");
     String animalName = scanner.nextLine();
 
+   String species;
+
+do {
     System.out.print("Enter Species: ");
-    String species = scanner.nextLine();
+    species = scanner.nextLine().trim();
 
+    if (species.isEmpty()) {
+        System.out.println("Species cannot be blank.");
+    }
+
+} while (species.isEmpty());
+
+    String rescueLocation;
+
+do {
     System.out.print("Enter Rescue Location: ");
-    String rescueLocation = scanner.nextLine();
+    rescueLocation = scanner.nextLine().trim();
 
+    if (rescueLocation.isEmpty()) {
+        System.out.println("Rescue Location cannot be blank.");
+    }
+
+} while (rescueLocation.isEmpty());
+
+    String assignedRanger;
+
+do {
     System.out.print("Enter Assigned Ranger: ");
-    String assignedRanger = scanner.nextLine();
+    assignedRanger = scanner.nextLine().trim();
+
+    if (assignedRanger.isEmpty()) {
+        System.out.println("Assigned Ranger cannot be blank.");
+    }
+
+} while (assignedRanger.isEmpty());
 
     System.out.print("Enter Number of Rescue Days: ");
     int numberOfRescueDays = scanner.nextInt();
