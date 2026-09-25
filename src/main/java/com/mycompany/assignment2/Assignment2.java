@@ -96,7 +96,24 @@ switch (rescueType) {
 
         boolean surgeryRequired = surgeryAnswer.equalsIgnoreCase("yes");
 
-        System.out.println("Injured Animal information captured.");
+        // Create an injured animal rescue object
+        InjuredAnimalRescue injuredRescue = new InjuredAnimalRescue(
+                rescueCaseId,
+                animalName,
+                species,
+                rescueLocation,
+                assignedRanger,
+                numberOfRescueDays,
+                dailyCareCost,
+                currentRescueStatus,
+                injuryDescription,
+                veterinaryTreatmentCost,
+                surgeryRequired
+        );
+
+        // Add the rescue case to the manager
+        manager.addRescueCase(injuredRescue);
+
         break;
 
     case 2:
@@ -116,7 +133,24 @@ switch (rescueType) {
 
         boolean fosterCareRequired = fosterAnswer.equalsIgnoreCase("yes");
 
-        System.out.println("Orphaned Animal information captured.");
+        // Create an orphaned animal rescue object
+        OrphanedAnimalRescue orphanedRescue = new OrphanedAnimalRescue(
+                rescueCaseId,
+                animalName,
+                species,
+                rescueLocation,
+                assignedRanger,
+                numberOfRescueDays,
+                dailyCareCost,
+                currentRescueStatus,
+                estimatedAge,
+                feedingCost,
+                fosterCareRequired
+        );
+
+        // Add the rescue case to the manager
+        manager.addRescueCase(orphanedRescue);
+
         break;
 
     case 3:
@@ -136,7 +170,24 @@ switch (rescueType) {
 
         boolean specialistTeamRequired = specialistAnswer.equalsIgnoreCase("yes");
 
-        System.out.println("Endangered Species information captured.");
+        // Create an endangered animal rescue object
+        EndangeredAnimalRescue endangeredRescue = new EndangeredAnimalRescue(
+                rescueCaseId,
+                animalName,
+                species,
+                rescueLocation,
+                assignedRanger,
+                numberOfRescueDays,
+                dailyCareCost,
+                currentRescueStatus,
+                conservationClassification,
+                securityCost,
+                specialistTeamRequired
+        );
+
+        // Add the rescue case to the manager
+        manager.addRescueCase(endangeredRescue);
+
         break;
 
     default:
