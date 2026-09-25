@@ -42,8 +42,17 @@ public class Assignment2 {
     System.out.println();
     System.out.println("========== ADD RESCUE CASE ==========");
 
+    String rescueCaseId;
+
+do {
     System.out.print("Enter Rescue Case ID: ");
-    String rescueCaseId = scanner.nextLine();
+    rescueCaseId = scanner.nextLine().trim();
+
+    if (rescueCaseId.isEmpty()) {
+        System.out.println("Rescue Case ID cannot be blank.");
+    }
+
+} while (rescueCaseId.isEmpty());
 
     System.out.print("Enter Animal Name: ");
     String animalName = scanner.nextLine();
