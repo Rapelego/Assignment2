@@ -68,8 +68,81 @@ public class Assignment2 {
     String currentRescueStatus = scanner.nextLine();
 
     System.out.println();
-    System.out.println("Common rescue case information captured.");
-    break;
+System.out.println("Select Rescue Type:");
+System.out.println("1. Injured Animal Rescue");
+System.out.println("2. Orphaned Animal Rescue");
+System.out.println("3. Endangered Species Rescue");
+
+System.out.print("Enter rescue type: ");
+int rescueType = scanner.nextInt();
+scanner.nextLine();
+
+switch (rescueType) {
+
+    case 1:
+
+        System.out.println();
+        System.out.println("----- Injured Animal Information -----");
+
+        System.out.print("Enter Injury Description: ");
+        String injuryDescription = scanner.nextLine();
+
+        System.out.print("Enter Veterinary Treatment Cost: R");
+        double veterinaryTreatmentCost = scanner.nextDouble();
+
+        System.out.print("Is Surgery Required? (yes/no): ");
+        String surgeryAnswer = scanner.next();
+        scanner.nextLine();
+
+        boolean surgeryRequired = surgeryAnswer.equalsIgnoreCase("yes");
+
+        System.out.println("Injured Animal information captured.");
+        break;
+
+    case 2:
+
+        System.out.println();
+        System.out.println("----- Orphaned Animal Information -----");
+
+        System.out.print("Enter Estimated Age: ");
+        int estimatedAge = scanner.nextInt();
+
+        System.out.print("Enter Feeding Cost: R");
+        double feedingCost = scanner.nextDouble();
+
+        System.out.print("Is Foster Care Required? (yes/no): ");
+        String fosterAnswer = scanner.next();
+        scanner.nextLine();
+
+        boolean fosterCareRequired = fosterAnswer.equalsIgnoreCase("yes");
+
+        System.out.println("Orphaned Animal information captured.");
+        break;
+
+    case 3:
+
+        System.out.println();
+        System.out.println("----- Endangered Species Information -----");
+
+        System.out.print("Enter Conservation Classification: ");
+        String conservationClassification = scanner.nextLine();
+
+        System.out.print("Enter Security Cost: R");
+        double securityCost = scanner.nextDouble();
+
+        System.out.print("Is a Specialist Team Required? (yes/no): ");
+        String specialistAnswer = scanner.next();
+        scanner.nextLine();
+
+        boolean specialistTeamRequired = specialistAnswer.equalsIgnoreCase("yes");
+
+        System.out.println("Endangered Species information captured.");
+        break;
+
+    default:
+        System.out.println("Invalid rescue type.");
+        break;
+}
 
                 case 2:
                     System.out.println("Search Rescue Case selected.");
