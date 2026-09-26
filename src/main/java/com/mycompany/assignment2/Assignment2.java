@@ -267,8 +267,34 @@ switch (rescueType) {
     break;
 
                 case 3:
-                    System.out.println("Update Rescue Status selected.");
-                    break;
+
+    System.out.println();
+    System.out.println("========== UPDATE RESCUE STATUS ==========");
+
+    System.out.print("Enter Rescue Case ID: ");
+    String updateId = scanner.nextLine().trim();
+
+    RescueCase caseToUpdate = manager.searchRescueCase(updateId);
+
+    if (caseToUpdate != null) {
+
+        System.out.println("Current Status: "
+                + caseToUpdate.getCurrentRescueStatus());
+
+        System.out.print("Enter New Rescue Status: ");
+        String newStatus = scanner.nextLine().trim();
+
+        manager.updateRescueStatus(updateId, newStatus);
+
+        System.out.println("New Status: "
+                + caseToUpdate.getCurrentRescueStatus());
+
+    } else {
+
+        System.out.println("Rescue case not found.");
+    }
+
+    break;
 
                 case 4:
                     System.out.println("Display All Rescue Cases selected.");
