@@ -232,8 +232,39 @@ switch (rescueType) {
 }
 
                 case 2:
-                    System.out.println("Search Rescue Case selected.");
-                    break;
+
+    System.out.println();
+    System.out.println("========== SEARCH RESCUE CASE ==========");
+
+    System.out.print("Enter Rescue Case ID to search: ");
+    String searchId = scanner.nextLine().trim();
+
+    RescueCase foundCase = manager.searchRescueCase(searchId);
+
+    if (foundCase != null) {
+
+        System.out.println();
+        System.out.println("Rescue case found.");
+        System.out.println("-----------------------------------");
+        System.out.println("Rescue Case ID: " + foundCase.getRescueCaseId());
+        System.out.println("Animal Name: " + foundCase.getAnimalName());
+        System.out.println("Species: " + foundCase.getSpecies());
+        System.out.println("Rescue Type: " + foundCase.getRescueType());
+        System.out.println("Rescue Location: " + foundCase.getRescueLocation());
+        System.out.println("Assigned Ranger: " + foundCase.getAssignedRanger());
+        System.out.println("Rescue Days: " + foundCase.getNumberOfRescueDays());
+        System.out.println("Current Status: " + foundCase.getCurrentRescueStatus());
+        System.out.println("Priority: " + foundCase.determineRescuePriority());
+        System.out.println("Total Rescue Cost: R"
+                + String.format("%.2f", foundCase.calculateTotalRescueCost()));
+        System.out.println("-----------------------------------");
+
+    } else {
+
+        System.out.println("Rescue case not found.");
+    }
+
+    break;
 
                 case 3:
                     System.out.println("Update Rescue Status selected.");
