@@ -297,8 +297,13 @@ switch (rescueType) {
     break;
 
                 case 4:
-                    System.out.println("Display All Rescue Cases selected.");
-                    break;
+
+    System.out.println();
+    System.out.println("========== ALL RESCUE CASES ==========");
+
+    manager.displayAllRescueCases();
+
+    break;
 
                 case 5:
                     System.out.println("Display Total Rescue Cost selected.");
