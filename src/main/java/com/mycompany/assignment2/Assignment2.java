@@ -306,8 +306,16 @@ switch (rescueType) {
     break;
 
                 case 5:
-                    System.out.println("Display Total Rescue Cost selected.");
-                    break;
+
+    System.out.println();
+    System.out.println("========== TOTAL RESCUE COST ==========");
+
+    double totalRescueCost = manager.calculateTotalRescueCost();
+
+    System.out.println("Total Rescue Cost: R"
+            + String.format("%.2f", totalRescueCost));
+
+    break;
 
                 case 6:
                     System.out.println("Thank you for using the Wildlife Rescue Operations System.");
