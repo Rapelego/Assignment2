@@ -59,4 +59,29 @@ public void testRescuePriorityCalculation() {
 
     assertEquals(expectedPriority, rescue.determineRescuePriority());
 }
+@Test
+public void testRescueStatusUpdate() {
+
+    RescueManager manager = new RescueManager();
+
+    InjuredAnimalRescue rescue = new InjuredAnimalRescue(
+            "WR103",
+            "Lion",
+            "African Lion",
+            "Kruger National Park",
+            "David",
+            2,
+            300.00,
+            "Rescue in Progress",
+            "Leg injury",
+            1500.00,
+            false
+    );
+
+    manager.addRescueCase(rescue);
+
+    manager.updateRescueStatus("WR103", "Under Observation");
+
+    assertEquals("Under Observation", rescue.getCurrentRescueStatus());
+}
 }
