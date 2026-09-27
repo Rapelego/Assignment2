@@ -37,4 +37,26 @@ public class RescueOperationsTest {
 
         assertEquals(expectedCost, rescue.calculateTotalRescueCost(), 0.01);
     }
+
+@Test
+public void testRescuePriorityCalculation() {
+
+    InjuredAnimalRescue rescue = new InjuredAnimalRescue(
+            "WR102",
+            "Rhino",
+            "White Rhino",
+            "Hluhluwe",
+            "Peter",
+            2,
+            400.00,
+            "Under Observation",
+            "Serious leg injury",
+            6000.00,
+            false
+    );
+
+    String expectedPriority = "High";
+
+    assertEquals(expectedPriority, rescue.determineRescuePriority());
+}
 }
