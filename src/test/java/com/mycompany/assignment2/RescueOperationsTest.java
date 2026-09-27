@@ -84,4 +84,30 @@ public void testRescueStatusUpdate() {
 
     assertEquals("Under Observation", rescue.getCurrentRescueStatus());
 }
+@Test
+public void testSearchExistingRescueCase() {
+
+    RescueManager manager = new RescueManager();
+
+    InjuredAnimalRescue rescue = new InjuredAnimalRescue(
+            "WR104",
+            "Elephant",
+            "African Elephant",
+            "Kruger National Park",
+            "James",
+            3,
+            500.00,
+            "Rescue in Progress",
+            "Broken leg",
+            2000.00,
+            false
+    );
+
+    manager.addRescueCase(rescue);
+
+    RescueCase foundCase = manager.searchRescueCase("WR104");
+
+    assertNotNull(foundCase);
+    assertEquals("WR104", foundCase.getRescueCaseId());
+}
 }
