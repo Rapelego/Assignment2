@@ -110,4 +110,45 @@ public void testSearchExistingRescueCase() {
     assertNotNull(foundCase);
     assertEquals("WR104", foundCase.getRescueCaseId());
 }
+@Test
+public void testPreventDuplicateRescueCaseIds() {
+
+    RescueManager manager = new RescueManager();
+
+    InjuredAnimalRescue firstRescue = new InjuredAnimalRescue(
+            "WR105",
+            "Lion",
+            "African Lion",
+            "Kruger National Park",
+            "Michael",
+            2,
+            300.00,
+            "Rescue in Progress",
+            "Injury",
+            1000.00,
+            false
+    );
+
+    InjuredAnimalRescue secondRescue = new InjuredAnimalRescue(
+            "WR105",
+            "Leopard",
+            "African Leopard",
+            "Kruger National Park",
+            "David",
+            3,
+            400.00,
+            "Under Observation",
+            "Injury",
+            1500.00,
+            false
+    );
+
+    manager.addRescueCase(firstRescue);
+    manager.addRescueCase(secondRescue);
+
+    RescueCase foundCase = manager.searchRescueCase("WR105");
+
+    assertNotNull(foundCase);
+    assertEquals("Lion", foundCase.getAnimalName());
+}
 }
