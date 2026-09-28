@@ -93,12 +93,31 @@ do {
 
 } while (assignedRanger.isEmpty());
 
-    System.out.print("Enter Number of Rescue Days: ");
-    int numberOfRescueDays = scanner.nextInt();
+  int numberOfRescueDays;
 
+do {
+    System.out.print("Enter Number of Rescue Days: ");
+    numberOfRescueDays = scanner.nextInt();
+
+    if (numberOfRescueDays <= 0) {
+        System.out.println("Number of Rescue Days must be greater than 0.");
+    }
+
+} while (numberOfRescueDays <= 0);
+
+    double dailyCareCost;
+
+do {
     System.out.print("Enter Daily Care Cost: R");
-    double dailyCareCost = scanner.nextDouble();
-    scanner.nextLine();
+    dailyCareCost = scanner.nextDouble();
+
+    if (dailyCareCost < 0) {
+        System.out.println("Daily Care Cost cannot be negative.");
+    }
+
+} while (dailyCareCost < 0);
+
+scanner.nextLine();
 
     System.out.print("Enter Current Rescue Status: ");
     String currentRescueStatus = scanner.nextLine();
