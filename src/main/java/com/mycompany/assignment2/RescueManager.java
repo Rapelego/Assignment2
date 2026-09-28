@@ -107,4 +107,7 @@ public class RescueManager implements RescueOperations {
 
         return totalCost;
     }
+    public int getTotalRescueCases() {
+    return rescueCases.size();
+}
 }
